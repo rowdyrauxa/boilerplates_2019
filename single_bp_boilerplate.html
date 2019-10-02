@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office">
+<!-- EMPTY HEAD FOR YAHOO MAIL APP -->
+<head></head>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TITLE</title>
+
+<!-- RESETS -->
+<style type="text/css">
+    /* empty yfix class for comments stripping classes in yahoo */.yfix{}
+    /* th reset */.yfix{}
+    table th { margin:0 !important; padding:0 !important; vertical-align:top !important; font-weight: normal !important; }
+    /* body reset */.yfix{}
+    body{ padding:0; margin:0; width:100%; margin-left:0px !important; margin-right:0px !important; }
+    /* html reset */.yfix{}
+    html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
+    /* VML reset */.yfix{}
+    v\:* { behavior: url(#default#VML); display:block;}
+    /* outlook.com specific resets */.yfix{}
+    .ReadMsgBody { width: 100%; }
+    .ExternalClass { width: 100%; }
+    .ExternalClass *{line-height:100%; }
+
+    /* iPhone auto styling reset */.yfix{}
+    a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    }
+
+</style>
+<!-- /RESETS -->
+
+<!-- 
+    MOBILE MEDIA QUERY 
+    keep in separate style tag so Gmail does not stripped whole block due to unsupported CSS
+-->
+<style type="text/css">
+    @media screen and (max-width: 620px) {
+    
+    /*GMAIL BODY CENTERING RESET*/
+    u ~ div { width: 100vw !important; }
+    div > u ~ div { width: 100% !important; }
+
+    /* mobile element blocking */
+    .block {display:block !important;}
+    .blockhead {display: table-header-group !important; }
+    .blockfoot {display: table-footer-group !important; }
+
+    /* hide or show content for mobile */
+    .hide {display:none !important;}
+    .show {display: block !important; width: auto !important; overflow: visible !important; float: none !important; max-height: inherit !important; line-height: inherit !important;}
+
+    /* block level element positioning for mobile */
+    .centertable {margin:0 auto !important;}
+
+    /* content positioning for mobile */
+    .aligncenter {text-align:center !important;}
+    .alignleft {text-align:left !important;}
+    .alignright {text-align:right !important;}
+    
+    /* mobile width */
+    .width320 {width:320px !important;}
+
+    /* auto height on images resized for mobile */
+    .hauto   {height:auto !important;}
+}
+
+</style>
+
+<!-- OUTLOOK STYLES -->
+<!--[if gte mso 9]>
+<style type="text/css">
+    .lhfix {mso-line-height-rule: exactly;}
+    div {mso-line-height-rule: 100%;}
+    .supFix {mso-text-raise: 60%;}
+</style>
+<![endif]-->
+
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+</head>
+<body>
+
+
+
+
+
+
+<!-- 
+    MODULE CONTAINER 
+    Outermost table 100% width with align center to allow content to center in viewpane
+    Table-layout fixed reset for yahoo mail centering
+    Inner table has dimensions for email in the width and class, adjust accordingly
+    Separate out modules into these containers as much as possible to avoid truncation
+    Dimensions always need to be declared as properties in style, height needs to be additionally declared as an HTML attribute if specified in style
+    widths less than 100% of their container need to have an associated max-width in px for Outlook
+-->
+<table cellspacing="0" cellpadding="0" border="0" role="presentation" style="width: 100%; table-layout: fixed;"><tr><td align="center" style="width: 100%; vertical-align: top;" bgcolor="#ffffff">
+<table cellspacing="0" cellpadding="0" border="0" role="presentation"><tr><td align="center" style="width: 640px;" class="width320">
+
+    <!-- MODULE CONTENT HERE -->
+    <!-- /MODULE CONTENT HERE -->s
+    
+</td></tr></table>
+</td></tr></table>
+<!-- /MODULE CONTAINER -->
+
+
+
+
+
+
+
+<!-- 
+    BACKGROUND IMAGES // VML // MOBILE SWAP
+    Make sure all properties on parent cell match in conditional HTML and VML
+    Change type to frame for images that need to fill the area and not repeat
+-->
+
+    <style type="text/css">
+        @media screen and (max-width: 620px) {
+            /* example background-image swap */
+            .bgSwap1 { 
+                background-image: url('images/bg_image_mobile.jpg') !important;
+                width: 320px !important;
+                height: 150px !important;
+             }
+        }
+    </style>
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+    <tr>
+        <td height="300" align="center" valign="top" bgcolor="#000000" background="images/bg_image.jpg" style="width: 640px; height: 300px;" class="bgSwap1">
+            <!--[if gte mso 9]>
+            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:640px; height:300px;">
+            <v:fill type="tile" color="#000000" src="images/bg_image.jpg" />
+            <v:textbox inset="0,0,0,0">
+            <table cellpadding="0"cellspacing="0"><tr><td width="640" height="300" align="center" valign="top">
+            <![endif]-->
+            <div>
+                <!-- content on top of bg image here -->
+                <!-- /content on top of bg image here -->
+            </div>
+            <!--[if gte mso 9]>
+            </td></tr></table>
+            </v:textbox>
+            </v:rect>
+            <![endif]--> 
+        </td>
+    </tr>
+    </table>
+
+<!-- /BACKGROUND IMAGES // VML // MOBILE SWAP -->
+
+
+
+
+
+<!-- 
+    HIDE & SHOW CONTENT 
+    class hide content you want hidden on mobile
+    class show is much more complicated and requires using the conditional comment below
+-->
+
+    <!-- content to be hidden on mobile -->
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" class="hide">
+    <tr>
+        <td bgcolor="#cc00000" style="width: 640px; height: 300px;"></td>
+    </tr>
+    </table>
+    <!-- /content to be hidden on mobile -->
+
+    <!-- content to be shown on mobile (hidden on desktop) -->
+    <!--[if !mso]><!-->
+    <div class="show" style="display:none; float:left; overflow:hidden; width:0; max-height:0; line-height:0;">
+        <!-- place mobile content here -->
+        <!-- /place mobile content here -->
+    </div>
+    <!--<![endif]-->
+    <!-- /content to be shown on mobile (hidden on desktop) -->
+
+<!-- /HIDE & SHOW CONTENT -->
+
+
+
+
+
+<!-- 
+    IMAGE RESET
+    Dimensions must be hard coded
+    Display block and border 0 are the most important resets here
+    Alt tag styling is present but not necessary
+    Use hauto class when resizing image for mobile
+ -->
+    <style type="text/css">
+        @media screen and (max-width: 620px) {
+            /* example image resizing */
+            .width200 { width: 200px !important; }
+        }
+    </style>
+
+    <img src="images/example_img.jpg" width="400" height="400" border="0" style="width: 400px; height: auto; display: block; font-family: Helvetica, sans-serif; font-size: 20px; color: #ffffff;" alt="" class="width200 hauto" />
+
+ <!-- /IMAGE RESET -->
+
+
+
+
+
+ <!-- 
+    TEXT WITH ANCHOR RESET
+    Text decoration and color need to be set on anchor
+    Font size minimum is 9px for mobile
+    Line-heights should always be at least 2px larger than font-size for Outlook
+    Letter-spacing and font-weight are both supported and fallback well
+    br class hide to determine breaking on desktop but not mobile
+    span class block to determine breaking on mobiel for only sections wrapped in span
+  -->
+    <style type="text/css">
+        @media screen and (max-width: 620px) {
+            /* example text resizing */
+            .font14 { font-size: 14px !important; }
+            .line16 { line-height: 16px !important; }
+        }
+    </style>
+    <div style="font-family: Arial, Helvetica, sans-serif; font-size:20px; line-height:22px; color:#000000;" class="font14 line16">
+        <a href="#" style="text-decoration:none; color:#000000;"><span class="block">Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit.<br class="hide" /> Impedit voluptate amet, aliquam dolor ipsam fugiat eius dolore, possimus reiciendis consequatur tempora officia. Veritatis omnis ea doloremque nemo quas, totam assumenda?</a>
+    </div>
+
+<!-- /TEXT WITH ANCHOR RESET -->
+
+
+
+
+
+
+<!-- 
+    SPACER 
+    Adjust line-height to set spacing between block elements
+    Make a new line-height class for the mobile height
+-->
+
+    <style type="text/css">
+        @media screen and (max-width: 620px) {
+            /* example spacer resizing */
+            .line30 { line-height: 30px !important; }
+        }
+    </style>
+
+    <div style="line-height:20px;" class="lhfix line30">&nbsp;</div>
+
+<!-- /SPACER -->
+
+
+
+
+
+
+<!-- 
+    TH BLOCKING 
+    Used for taking inline module and stacking for "tube of content"
+    th must have block class
+    width of two or more th must be greater than width of parent to stack
+    font-weight normal necessary for resetting weight of text
+    table immediately inside th necessary for alignment of content within
+-->
+
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 640px;" class="width320">
+    <tr>
+        <th style="width: 160px; font-weight: normal;" class="block width320">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <tr>
+                <td height="200" bgcolor="#ff0000" style="width: 160px; height: 200px;" class="width320"></td>
+            </tr>
+            </table>
+            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
+        </th>
+        <th style="width: 160px; font-weight: normal;" class="block width320">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <tr>
+                <td height="200" bgcolor="#00ff00" style="width: 160px; height: 200px;" class="width320"></td>
+            </tr>
+            </table>
+            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
+        </th>
+        <th style="width: 160px; font-weight: normal;" class="block width320">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <tr>
+                <td height="200" bgcolor="#0000ff" style="width: 160px; height: 200px;" class="width320"></td>
+            </tr>
+            </table>
+            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
+        </th>
+        <th style="width: 160px; font-weight: normal;" class="block width320">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <tr>
+                <td height="200" bgcolor="#000000" style="width: 160px; height: 200px;" class="width320"></td>
+            </tr>
+            </table>
+            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
+        </th>
+    </tr>
+    </table>
+
+<!-- /TH BLOCKING -->
+
+
+
+<!-- /CONTENT -->
+</body>
+</html>

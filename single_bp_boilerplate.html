@@ -19,6 +19,8 @@
     html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
     /* VML reset */.yfix{}
     v\:* { behavior: url(#default#VML); display:block;}
+    /* centering body for samsung devices */.yfix{}
+    #MessageViewBody, #MessageWebViewDiv{width:100%!important;}
     /* outlook.com specific resets */.yfix{}
     .ReadMsgBody { width: 100%; }
     .ExternalClass { width: 100%; }
@@ -105,7 +107,7 @@
     Inner table has dimensions for email in the width and class, adjust accordingly
     Separate out modules into these containers as much as possible to avoid truncation
     Dimensions always need to be declared as properties in style, height needs to be additionally declared as an HTML attribute if specified in style
-    widths less than 100% of their container need to have an associated max-width in px for Outlook
+    Percentage widths less than 100% of their container need to have an associated max-width in px for Outlook
 -->
 <table cellspacing="0" cellpadding="0" border="0" role="presentation" style="width: 100%; table-layout: fixed;"><tr><td align="center" style="width: 100%; vertical-align: top;" bgcolor="#ffffff">
 <table cellspacing="0" cellpadding="0" border="0" role="presentation"><tr><td align="center" style="width: 640px;" class="width320">
@@ -146,7 +148,7 @@
             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:640px; height:300px;">
             <v:fill type="tile" color="#000000" src="images/bg_image.jpg" />
             <v:textbox inset="0,0,0,0">
-            <table cellpadding="0"cellspacing="0"><tr><td width="640" height="300" align="center" valign="top">
+            <table cellpadding="0"cellspacing="0"><tr><td height="300" align="center" valign="top" style="width:640px;height:300px;">
             <![endif]-->
             <div>
                 <!-- content on top of bg image here -->
@@ -171,6 +173,7 @@
     HIDE & SHOW CONTENT 
     class hide content you want hidden on mobile
     class show is much more complicated and requires using the conditional comment below
+    always use hide class on block level content, DO NOT use hide on elements of a table that would otherwise leave a table incomplete
 -->
 
     <!-- content to be hidden on mobile -->
@@ -202,6 +205,7 @@
     Display block and border 0 are the most important resets here
     Alt tag styling is present but not necessary
     Use hauto class when resizing image for mobile
+    Widths can be percentage in style, but must have max-width for Outlook
  -->
     <style type="text/css">
         @media screen and (max-width: 620px) {
@@ -225,7 +229,8 @@
     Line-heights should always be at least 2px larger than font-size for Outlook
     Letter-spacing and font-weight are both supported and fallback well
     br class hide to determine breaking on desktop but not mobile
-    span class block to determine breaking on mobiel for only sections wrapped in span
+    span class block to determine breaking on mobile for only sections wrapped in span
+    empty span with class block acts as a hidden br tag for mobile
   -->
     <style type="text/css">
         @media screen and (max-width: 620px) {
@@ -235,7 +240,7 @@
         }
     </style>
     <div style="font-family: Arial, Helvetica, sans-serif; font-size:20px; line-height:22px; color:#000000;" class="font14 line16">
-        <a href="#" style="text-decoration:none; color:#000000;"><span class="block">Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit.<br class="hide" /> Impedit voluptate amet, aliquam dolor ipsam fugiat eius dolore, possimus reiciendis consequatur tempora officia. Veritatis omnis ea doloremque nemo quas, totam assumenda?</a>
+        <a href="#" style="text-decoration:none; color:#000000;"><span class="block">Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit.<br class="hide" /> Impedit voluptate amet, aliquam dolor ipsam fugiat eius dolore, possimus reiciendis consequatur tempora officia. <span class="block"></span>Veritatis omnis ea doloremque nemo quas, totam assumenda?</a>
     </div>
 
 <!-- /TEXT WITH ANCHOR RESET -->
@@ -258,7 +263,11 @@
         }
     </style>
 
+    <!-- using class for Outlook fix -->
     <div style="line-height:20px;" class="lhfix line30">&nbsp;</div>
+
+    <!-- using inline for Outlook fix -->
+    <div style="line-height:20px; mso-line-height-rule:exactly;" class="line30">&nbsp;</div>
 
 <!-- /SPACER -->
 
@@ -281,39 +290,174 @@
         <th style="width: 160px; font-weight: normal;" class="block width320">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation">
             <tr>
-                <td height="200" bgcolor="#ff0000" style="width: 160px; height: 200px;" class="width320"></td>
+                <td height="200" bgcolor="#ff0000" style="width: 160px; height: 200px;" class="width320">
+                    BOX 1
+                </td>
             </tr>
             </table>
-            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
         </th>
         <th style="width: 160px; font-weight: normal;" class="block width320">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation">
             <tr>
-                <td height="200" bgcolor="#00ff00" style="width: 160px; height: 200px;" class="width320"></td>
+                <td height="200" bgcolor="#00ff00" style="width: 160px; height: 200px;" class="width320">
+                    BOX 2
+                </td>
             </tr>
             </table>
-            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
         </th>
         <th style="width: 160px; font-weight: normal;" class="block width320">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation">
             <tr>
-                <td height="200" bgcolor="#0000ff" style="width: 160px; height: 200px;" class="width320"></td>
+                <td height="200" bgcolor="#0000ff" style="width: 160px; height: 200px;" class="width320">
+                    BOX 3
+                </td>
             </tr>
             </table>
-            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
         </th>
         <th style="width: 160px; font-weight: normal;" class="block width320">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation">
             <tr>
-                <td height="200" bgcolor="#000000" style="width: 160px; height: 200px;" class="width320"></td>
+                <td height="200" bgcolor="#dddddd" style="width: 160px; height: 200px;" class="width320">
+                    BOX 4
+                </td>
             </tr>
             </table>
-            <div style="line-height:20px;" class="lhfix">&nbsp;</div>
         </th>
     </tr>
     </table>
 
 <!-- /TH BLOCKING -->
+
+
+
+
+
+
+<!-- 
+    REVERSE STACKING 
+    left column stacks underneath right for mobile
+    blockhead and blockfoot class makes ths act as table headers and footers respectively
+    complicated to use in conjunction with tables beyond 2 colum rows... recommend nesting further if more columns are necessary
+    tr has important resets inline for some less performant mobile clients - DO NOT style tr beyond this, they are purely structural tags and should not be given CSS
+-->
+    
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 640px;" class="width320">
+    <tr style="display:table;width:100%;">
+        <th style="width: 320px; font-weight: normal;" class="blockfoot">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <tr>
+                <td height="200" bgcolor="pink" style="width: 320px; height: 200px;">
+                    LEFT D // BOTTOM M
+                </td>
+            </tr>
+            </table>
+        </th>
+        <th style="width: 320px; font-weight: normal;" class="blockhead">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+            <tr>
+                <td height="200" bgcolor="orange" style="width: 320px; height: 200px;">
+                    RIGHT D // TOP M
+                </td>
+            </tr>
+            </table>
+        </th>
+        
+    </tr>
+    </table>
+
+<!-- REVERSE STACKING -->
+
+
+
+
+
+
+
+
+<!-- 
+    INLINE BLOCK STACKING
+    fake "flex" style blocking, no classes to force block beyond device and column widths
+    see second th divs for exact inline-block method
+    keep an eye out for the inline-block bug - white space between two inline-block divs must be zeroed out as they are treated like text in some clients/browsers
+    width values and dimensions are more critical than ever
+-->
+
+    <style type="text/css">
+        @media screen and (max-width: 620px) {
+            .w360 { width: 360px !important; }
+        }
+    </style>
+    
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%; max-width: 720px;">
+    <tr>
+        <th style="font-weight: normal; width: 180px" class="block w360">
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="#000000" style="width: 100%;">
+            <tr>
+                <td align="center" height="360" style="height: 360px;" class="hauto">
+                    <table cellpadding="0" cellspacing="0" border="0" role="presentation" align="center" style="width: 92%;">
+                    <tr>
+                        <td align="center" style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #ffffff;">
+                            black column content
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+            </table>
+        </th>
+        <th style="font-weight: normal; font-size: 0; width: 540px;" class="block w360"><!--[if (gte mso 9)|(IE)]><table align="center" cellpadding="0" cellspacing="0" border="0" style="width:540px;"><tr><td align="center" valign="top" style="width:180px;"><![endif]--><div style="width: 180px; min-width: 180px; max-width: 180px; display: inline-block;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="red" style="width: 100%;">
+                <tr>
+                    <td height="180" style="height: 180px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #000000;">
+                        1
+                    </td>
+                </tr>
+                </table>
+            </div><!--[if (gte mso 9)|(IE)]></td><td align="center" valign="top" style="width:180px;"><![endif]--><div style="width: 180px; min-width: 180px; max-width: 180px; display: inline-block;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="blue" style="width: 100%;">
+                <tr>
+                    <td height="180" style="height: 180px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #000000;">
+                        2
+                    </td>
+                </tr>
+                </table>
+            </div><!--[if (gte mso 9)|(IE)]></td><td align="center" valign="top" style="width:180px;"><![endif]--><div style="width: 180px; min-width: 180px; max-width: 180px; display: inline-block;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="yellow"  style="width: 100%;">
+                <tr>
+                    <td height="180" style="height: 180px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #000000;">
+                        3
+                    </td>
+                </tr>
+                </table>
+            </div><!--[if (gte mso 9)|(IE)]></td></tr></table><table align="center" cellpadding="0" cellspacing="0" border="0" style="width:540px;"><tr><td align="center" valign="top" style="width:180px;"><![endif]--><div style="width: 180px; min-width: 180px; max-width: 180px; display: inline-block;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="green" style="width: 100%;">
+                <tr>
+                    <td height="180" style="height: 180px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #000000;">
+                        4
+                    </td>
+                </tr>
+                </table>
+            </div><!--[if (gte mso 9)|(IE)]></td><td align="center" valign="top" style="width:180px;"><![endif]--><div style="width: 180px; min-width: 180px; max-width: 180px; display: inline-block;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="purple" style="width: 100%;">
+                <tr>
+                    <td height="180" style="height: 180px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #000000;">
+                        5
+                    </td>
+                </tr>
+                </table>
+            </div><!--[if (gte mso 9)|(IE)]></td><td align="center" valign="top" style="width:180px;"><![endif]--><div style="width: 180px; min-width: 180px; max-width: 180px; display: inline-block;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" bgcolor="orange" style="width: 100%;">
+                <tr>
+                    <td height="180" style="height: 180px; font-family: Arial, sans-serif; font-size: 16px; line-height: 1; color: #000000;">
+                        6
+                    </td>
+                </tr>
+                </table>
+            </div><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></th>
+    </tr>
+    </table>
+
+
 
 
 

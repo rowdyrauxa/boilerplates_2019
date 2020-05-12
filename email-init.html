@@ -1,78 +1,99 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!-- yahoo mail app fix -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ lang="en">
 <head></head>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Title</title>
+<title>TITLE</title>
 <style type="text/css">
-    table th { margin:0!important; padding:0!important; vertical-align:top!important; font-weight: normal!important; }
-    body{ padding:0; margin:0; width:100%; margin-left:0px!important; margin-right:0px!important; }
-    html { -webkit-text-size-adjust:none; }
-    v\:* { behavior: url(#default#VML); display:block;}
-    .ReadMsgBody { width: 100%; }
-    .ExternalClass { width: 100%; }
-    .ExternalClass * {line-height: 100%} 
-    .iosLinkWhite a {text-decoration: none; color: #ffffff;}
-
-    a[x-apple-data-detectors] {
-    color: inherit!important;
-    text-decoration: none!important;
-    font-size: inherit!important;
-    font-family: inherit!important;
-    font-weight: inherit!important;
-    line-height: inherit!important;
+    @font-face {
+        font-family: 'Bookerly';
+        src:url(https://m.media-amazon.com/images/G/01/sinatra/fonts/bookerlydisplay-regular-webfont._CB469299545_.eot),
+            url(https://m.media-amazon.com/images/G/01/sinatra/cyir/fonts/bookerlydisplay-regular-webfont._CB493860041_.woff2) format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        mso-font-alt: 'Georgia';
     }
-
-    @media screen and (max-width: 620px) {
-    /* general */
+</style>
+<!-- RESETS -->
+<style type="text/css">
+    table th { margin:0!important; padding:0!important; vertical-align:top!important; font-weight:normal!important; }
+    body{ padding:0; margin:0; width:100%; margin-left:0px !important; margin-right:0px !important; }
+    html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
+    v\:* { behavior: url(#default#VML); display:block;}
+    #MessageViewBody, #MessageWebViewDiv{width:100%!important;}
+    .ReadMsgBody {width:100%;}
+    .ExternalClass {width:100%;}
+    .ExternalClass *{line-height:100%;}
+    a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    }
+    u + #body a,
+    u + #body a:hover,
+    u + #body a:visited{
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+</style>
+<style type="text/css">
+    @media screen and (max-device-width: 620px) {
+    u ~ div { width: 100vw !important; }
+    div > u ~ div { width: 100% !important; }
     .block {display:block!important;}
-    .blockhead {display: table-header-group!important; }
-    .blockfoot {display: table-footer-group!important; }
+    .blockhead {display:table-header-group!important; }
+    .blockfoot {display:table-footer-group!important; }
     .hide {display:none!important;}
-    .show {display: block!important; width: auto!important; overflow: visible!important; float: none!important; max-height: inherit!important; line-height: inherit!important;}
+    .show {display:block!important; width:auto!important; overflow:visible!important; float:none!important; max-height:inherit!important; line-height:inherit!important;}
     .centertable {margin:0 auto!important;}
     .aligncenter {text-align:center!important;}
     .alignleft {text-align:left!important;}
     .alignright {text-align:right!important;}
     .width320 {width:320px!important;}
-    .min320 {min-width:320px!important;}
-    .hauto   {height:auto!important;}
+    .wauto {width:auto!important;}
+    .hauto {height:auto!important;}
 }
 </style>
 
+<!-- OUTLOOK STYLES -->
 <!--[if gte mso 9]>
 <style type="text/css">
-div {mso-line-height-rule: 100%;}
-.lhfix {mso-line-height-rule: exactly;}
-.supFix {mso-text-raise: 60%;}
+    .lhfix {mso-line-height-rule: exactly;}
+    div {mso-line-height-rule: 100%;}
+    .supFix {mso-text-raise: 60%;}
 </style>
 <![endif]-->
+
 <!--[if gte mso 9]><xml>
-    <o:OfficeDocumentSettings>
-    <o:AllowPNG/>
-    <o:PixelsPerInch>96</o:PixelsPerInch>
-    </o:OfficeDocumentSettings>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
 </xml><![endif]-->
 
 </head>
-<body>
+<!-- body tag id used to target Gmail -->
+<body id="body">
 
-<!-- content -->
-<table cellspacing="0" cellpadding="0" border="0" width="100%" style="width:100%;table-layout:fixed;" role="presentation"> 
-<tr>
-    <td width="100%" align="center"  bgcolor="#ffffff" style="width:100%; vertical-align:top;">
-        <table cellspacing="0" cellpadding="0" border="0" role="presentation">
-        <tr>
-            <td width="640" align="center" style="width:640px;" class="width320">
-                
-            </td>
-        </tr>
-        </table>
-    </td>
-</tr>
-</table>
-<!-- /content -->
+<!-- container -->
+<table cellspacing="0" cellpadding="0" border="0" role="presentation" style="width: 100%; table-layout: fixed;"><tr><td align="center" bgcolor="#ffffff" style="width: 100%; vertical-align: top;">
+<table cellspacing="0" cellpadding="0" border="0" role="presentation"><tr><td align="center" style="width: 640px;" class="width320">
+
+    <!-- MODULE CONTENT HERE -->
+    <!-- /MODULE CONTENT HERE -->
+    
+</td></tr></table>
+</td></tr></table>
 
 </body>
 </html>

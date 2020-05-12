@@ -53,6 +53,18 @@
     line-height: inherit !important;
     }
 
+    /* GMAIL auto styling reset */
+    u + #body a,
+    u + #body a:hover,
+    u + #body a:visited{
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
 </style>
 <!-- /RESETS -->
 
@@ -113,7 +125,8 @@
 </xml><![endif]-->
 
 </head>
-<body>
+<!-- body tag id used to target Gmail -->
+<body id="body">
 
 
 
@@ -129,7 +142,7 @@
     Dimensions always need to be declared as properties in style, height needs to be additionally declared as an HTML attribute if specified in style
     Percentage widths less than 100% of their container need to have an associated max-width in px for Outlook
 -->
-<table cellspacing="0" cellpadding="0" border="0" role="presentation" style="width: 100%; table-layout: fixed;"><tr><td align="center" style="width: 100%; vertical-align: top;" bgcolor="#ffffff">
+<table cellspacing="0" cellpadding="0" border="0" role="presentation" style="width: 100%; table-layout: fixed;"><tr><td align="center" bgcolor="#ffffff" style="width: 100%; vertical-align: top;">
 <table cellspacing="0" cellpadding="0" border="0" role="presentation"><tr><td align="center" style="width: 640px;" class="width320">
 
     <!-- MODULE CONTENT HERE -->
@@ -148,11 +161,12 @@
 <!-- 
     BACKGROUND IMAGES // VML // MOBILE SWAP
     Make sure all properties on parent cell match in conditional HTML and VML
-    Change type to frame for images that need to fill the area and not repeat
+    Change v:fill type to "frame" for images that need to fill the area and not repeat, otherwise tile will tile
+    v:image hack is a potential option instead of using image fills, however they do not properly support transparency
 -->
 
     <style type="text/css">
-        @media screen and (max-width: 620px) {
+        @media screen and (max-device-width: 620px) {
             /* example background-image swap */
             .bgSwap1 { 
                 background-image: url('images/bg_image_mobile.jpg') !important;
@@ -168,7 +182,7 @@
             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:640px; height:300px;">
             <v:fill type="tile" color="#000000" src="images/bg_image.jpg" />
             <v:textbox inset="0,0,0,0">
-            <table cellpadding="0"cellspacing="0"><tr><td height="300" align="center" valign="top" style="width:640px;height:300px;">
+            <table cellpadding="0"cellspacing="0"border="0"role="presentation"><tr><td height="300" align="center" valign="top" style="width:640px;height:300px;">
             <![endif]-->
             <div>
                 <!-- content on top of bg image here -->
@@ -193,13 +207,13 @@
     HIDE & SHOW CONTENT 
     class hide content you want hidden on mobile
     class show is much more complicated and requires using the conditional comment below
-    always use hide class on block level content, DO NOT use hide on elements of a table that would otherwise leave a table incomplete
+    always use hide class on block level content, DO NOT use hide on elements of a table (tr, td, etc) that would otherwise leave a table incomplete, this could cause 
 -->
 
     <!-- content to be hidden on mobile -->
     <table cellpadding="0" cellspacing="0" border="0" role="presentation" class="hide">
     <tr>
-        <td bgcolor="#cc00000" style="width: 640px; height: 300px;"></td>
+        <td height="300" bgcolor="#cc00000" style="width: 640px; height: 300px;"></td>
     </tr>
     </table>
     <!-- /content to be hidden on mobile -->
@@ -228,7 +242,7 @@
     Widths can be percentage in style, but must have max-width for Outlook
  -->
     <style type="text/css">
-        @media screen and (max-width: 620px) {
+        @media screen and (max-device-width: 620px) {
             /* example image resizing */
             .width200 { width: 200px !important; }
         }
@@ -251,16 +265,17 @@
     br class hide to determine breaking on desktop but not mobile
     span class block to determine breaking on mobile for only sections wrapped in span
     empty span with class block acts as a hidden br tag for mobile
+    use aria-hidden true on br and empty spans to tell screen readers to ignore
   -->
     <style type="text/css">
-        @media screen and (max-width: 620px) {
+        @media screen and (max-device-width: 620px) {
             /* example text resizing */
             .font14 { font-size: 14px !important; }
             .line16 { line-height: 16px !important; }
         }
     </style>
-    <div style="font-family: Arial, Helvetica, sans-serif; font-size:20px; line-height:22px; color:#000000;" class="font14 line16">
-        <a href="#" style="text-decoration:none; color:#000000;"><span class="block">Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit.<br class="hide" /> Impedit voluptate amet, aliquam dolor ipsam fugiat eius dolore, possimus reiciendis consequatur tempora officia. <span class="block"></span>Veritatis omnis ea doloremque nemo quas, totam assumenda?</a>
+    <div style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 22px; color: #000000;" class="font14 line16">
+        <a href="#" style="text-decoration:none; color:#000000;"><span class="block">Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit.<br aria-hidden="true" class="hide" /> Impedit voluptate amet, aliquam dolor ipsam fugiat eius dolore, possimus reiciendis consequatur tempora officia. <span aria-hidden="true" class="block"></span>Veritatis omnis ea doloremque nemo quas, totam assumenda?</a>
     </div>
 
 <!-- /TEXT WITH ANCHOR RESET -->
@@ -272,12 +287,13 @@
 
 <!-- 
     SPACER 
+    use only when you can't use padding on a cell for spacing
     Adjust line-height to set spacing between block elements
     Make a new line-height class for the mobile height
 -->
 
     <style type="text/css">
-        @media screen and (max-width: 620px) {
+        @media screen and (max-device-width: 620px) {
             /* example spacer resizing */
             .line30 { line-height: 30px !important; }
         }
@@ -286,7 +302,7 @@
     <!-- using class for Outlook fix -->
     <div style="line-height:20px;" class="lhfix line30">&nbsp;</div>
 
-    <!-- using inline for Outlook fix -->
+    <!-- using inline for Outlook fix... drops into any template -->
     <div style="line-height:20px; mso-line-height-rule:exactly;" class="line30">&nbsp;</div>
 
 <!-- /SPACER -->
@@ -381,7 +397,6 @@
             </tr>
             </table>
         </th>
-        
     </tr>
     </table>
 
@@ -403,7 +418,7 @@
 -->
 
     <style type="text/css">
-        @media screen and (max-width: 620px) {
+        @media screen and (max-device-width: 620px) {
             .w360 { width: 360px !important; }
         }
     </style>
